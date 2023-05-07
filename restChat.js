@@ -308,6 +308,23 @@ function completeFetchDi(result) {
   });
 }
  
+// logout 
+function logout() {
+  // Remove the token from local storage
+  localStorage.removeItem('token');
+  
+  // Redirect the user to the login page
+  window.location.href = '/login';
+}
+
+// Add event listener to the logout button
+
+
+// Listen for the beforeunload event to automatically log out the user
+window.addEventListener('beforeunload', () => {
+  localStorage.removeItem('token');
+});
+
 
 // change background fun?!!!
 
